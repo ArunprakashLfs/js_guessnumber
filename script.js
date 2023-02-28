@@ -1,14 +1,16 @@
 let guessEl = document.querySelector("#output-result");
 let guessValue= document.querySelector("#guessValue");
 let highScoreEl = document.querySelector("#highScore");
+let buttonEl = document.querySelector("#button")
 let resetButton = document.querySelector("#reset");
+let guessInput = document.querySelector("#guessInput")
 var guess= 7;
 var highScore=0;
 const result = Math.trunc((Math.random()*100)-1);
 console.log(result)
 
-function play(){
-    let user_guess = document.querySelector("#guess").value;
+buttonEl.addEventListener('click', function (){
+    let user_guess = Number(guessInput.value);
     if(user_guess <1 || user_guess > 100){
         alert("Enter correct Value");
     }else{
@@ -17,13 +19,13 @@ function play(){
         resetButton.style.display = 'block';
         guessValue.textContent = "Guess:" + guess;
         guessEl.textContent = "GameOver";
-       }else{
+       }else {
         guess = guess - 1;
         if(user_guess == result){
             highScore = guess;
             guessEl.textContent = "you won";
             resetButton.style.display = 'block';
-            highScoreEl.textContent = "HighScore" + highScore;
+            highScoreEl.textContent = "HighScore" + highScore ;
         }
         else if(user_guess < result){
 
@@ -37,4 +39,9 @@ function play(){
        }
         
     }
+})
+resetButton.addEventListener('click' , function() {
+    guess = 7;
+    
 }
+ )

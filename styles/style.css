@@ -157,4 +157,5 @@ h2{
 .container{
   display: flex;
   justify-content: center;
+  align-self: center;
 }
