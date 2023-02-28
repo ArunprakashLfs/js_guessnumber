@@ -4,8 +4,12 @@ let highScoreEl = document.querySelector("#highScore");
 let buttonEl = document.querySelector("#button")
 let resetButton = document.querySelector("#reset");
 let guessInput = document.querySelector("#guessInput")
+
+//assigned value of guess
 var guess= 7;
 var highScore=0;
+
+//Genarate the random function
 const result = Math.trunc((Math.random()*100)-1);
 console.log(result)
 
@@ -31,17 +35,19 @@ buttonEl.addEventListener('click', function (){
 
             guessValue.textContent = "Guess:" + guess;
             guessEl.textContent = "your value is low"
+            guessInput.value= "";
         }
         else if(user_guess > result){
             guessValue.textContent = "Guess:" + guess;
             guessEl.textContent = `your value is high ${user_guess}`
+            guessInput.value= "";
         }
        }
         
     }
 })
 resetButton.addEventListener('click' , function() {
-    guess = 7;
-    
+    resetButton.style.display = 'none'
+
 }
  )
