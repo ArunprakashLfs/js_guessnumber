@@ -7,7 +7,11 @@ let guessInput = document.querySelector("#guessInput")
 
 //assigned value of guess
 var guess= 7;
-var highScore=0;
+var highScore = 0;
+
+guessValue.innerText = guess;
+highScoreEl.innerText = highScore;
+
 
 //Genarate the random function
 const result = Math.trunc((Math.random()*100)-1);
@@ -21,26 +25,27 @@ buttonEl.addEventListener('click', function (){
         
         if(guess <= 0){
         resetButton.style.display = 'block';
-        guessValue.textContent = "Guess:" + guess;
+        guessValue.innerText = guess;
         guessEl.textContent = "GameOver";
        }else {
-        guess = guess - 1;
         if(user_guess == result){
             highScore = guess;
             guessEl.textContent = "you won";
             resetButton.style.display = 'block';
-            highScoreEl.textContent = "HighScore" + highScore ;
+            highScoreEl.innerText= highScore ;
         }
         else if(user_guess < result){
 
-            guessValue.textContent = "Guess:" + guess;
+            guessValue.textContent =  guess;
             guessEl.textContent = "your value is low"
             guessInput.value= "";
+            guess--;
         }
         else if(user_guess > result){
-            guessValue.textContent = "Guess:" + guess;
+            guessValue.textContent =  guess;
             guessEl.textContent = `your value is high ${user_guess}`
             guessInput.value= "";
+            guess--;
         }
        }
         
@@ -48,6 +53,5 @@ buttonEl.addEventListener('click', function (){
 })
 resetButton.addEventListener('click' , function() {
     resetButton.style.display = 'none'
-
 }
  )
