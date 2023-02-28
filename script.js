@@ -52,6 +52,12 @@ buttonEl.addEventListener('click', function (){
     }
 })
 resetButton.addEventListener('click' , function() {
-    resetButton.style.display = 'none'
+    resetButton.style.display = 'none';
+    result = random();
+    guessInput.value= "";
+    var guess= 7;
+    var highScore = 0;
+    guessValue.innerText = guess;
+    highScoreEl.innerText = highScore;
 }
  )
