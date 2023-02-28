@@ -111,18 +111,19 @@ body{
   text-align: center;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .card{
+  width: 800px;
   background-color: var(--clr-milk);
   padding: 2rem;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
+  align-content: center;
   justify-content: center;
-  align-content: space-between;
-  gap: 2rem;
 }
 h1{
   font-size: var(--ff-roboto);
@@ -146,4 +147,14 @@ h2{
   padding: 0.5rem 1rem;
   background-color: var(--clr-violet);
   color: white;
+}
+#reset{
+  display: none;
+  background-color: var(--clr-skyblue);
+  color: var(--clr-violet);
+  padding: 1rem 3rem;
+}
+.container{
+  display: flex;
+  justify-content: center;
 }
