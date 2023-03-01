@@ -6,7 +6,7 @@ let resetButton = document.querySelector("#reset");
 let guessInput = document.querySelector("#guessInput")
 
 //assigned value of guess
-var guess= 7;
+var guess= 10;
 var highScore = 0;
 
 guessValue.innerText = guess;
@@ -18,9 +18,9 @@ highScoreEl.innerText = highScore;
 const result = () => {
     return Math.trunc(Math.random() * 100 + 1);
   };
-  console.log(result); //it will gave you the function as output
+  console.log(result()); //it will gave you the function as output
   let ranNum = result();
-
+  console.log(ranNum)
 buttonEl.addEventListener('click', function (){
     let user_guess = Number(guessInput.value);
     if(user_guess <1 || user_guess > 100){
@@ -67,12 +67,12 @@ buttonEl.addEventListener('click', function (){
     }
 })
 resetButton.addEventListener('click' , function() {
-    resetButton.style.display = 'none';
-    result = random();
-    guessInput.value= "";
-    var guess= 7;
-    var highScore = 0;
-    guessValue.innerText = guess;
-    highScoreEl.innerText = highScore;
+    guess = 10;
+    guessesLeft.innerText = guesses;
+    inputNum.value = "";
+    output.textContent = "";
+    ranNum = result();
+    console.log(ranNum);
+    resetButton.style.display = "none";
 }
  )
