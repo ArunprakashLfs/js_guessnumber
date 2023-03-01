@@ -104,7 +104,7 @@ p {
     width: 95vw;
   }
 }
-body{
+/* body{
   background-color: var(--clr-skyblue);
   max-width: 100vw;
   height: 100vh;
@@ -158,4 +158,52 @@ h2{
   display: flex;
   justify-content: center;
   align-self: center;
+} */
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--clr-skyblue);
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.card{
+  margin: auto;
+  width: 22rem;
+  height: 20rem;
+  background-color: var(--clr-milk);
+  text-align: center;
+  border-radius: 2rem;
+  gap: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: center;
+}
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+h1{
+  font-size: 1.5rem;
+}
+h2{
+  font-size: 1rem;
+}
+#guess{
+  padding:  0.5rem;
+}
+#button{
+  padding: 0.5rem 1rem;
+  background-color: var(--clr-violet);
+  color: white;
+}
+#reset{
+  display: none;
+  background-color: var(--clr-skyblue);
+  color: var(--clr-violet);
+  padding: 1rem 3rem;
 }
