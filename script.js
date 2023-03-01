@@ -14,8 +14,12 @@ highScoreEl.innerText = highScore;
 
 
 //Genarate the random function
-const result = Math.trunc((Math.random()*100)-1);
-console.log(result)
+
+const result = () => {
+    return Math.trunc(Math.random() * 100 + 1);
+  };
+  console.log(result); //it will gave you the function as output
+  let ranNum = result();
 
 buttonEl.addEventListener('click', function (){
     let user_guess = Number(guessInput.value);
@@ -28,20 +32,31 @@ buttonEl.addEventListener('click', function (){
         guessValue.innerText = guess;
         guessEl.textContent = "GameOver";
        }else {
-        if(user_guess == result){
+        if(user_guess == ranNum){
             highScore = guess;
             guessEl.textContent = "you won";
             resetButton.style.display = 'block';
             highScoreEl.innerText= highScore ;
+            let currentScore = highScore;
+            let currentGuessesLeft = guess;
+            console.log(currentScore);
+            console.log(currentGuessesLeft);
+            if (currentScore <= currentGuessesLeft) {
+                 highScore = guess;
+                 highScore.innerText = highScore;
+                 highScore.innerText = currentGuessesLeft;
+                } else {
+                    highScore.innerText = currentScore;
+                }
         }
-        else if(user_guess < result){
+        else if(user_guess < ranNum){
 
             guessValue.textContent =  guess;
             guessEl.textContent = "your value is low"
             guessInput.value= "";
             guess--;
         }
-        else if(user_guess > result){
+        else if(user_guess > ranNum){
             guessValue.textContent =  guess;
             guessEl.textContent = `your value is high ${user_guess}`
             guessInput.value= "";
