@@ -170,8 +170,8 @@ body{
 }
 .card{
   margin: auto;
-  width: 22rem;
-  height: 20rem;
+  width: 24rem;
+  height: 24rem;
   background-color: var(--clr-milk);
   text-align: center;
   border-radius: 2rem;
@@ -203,6 +203,7 @@ h2{
 }
 #reset{
   display: none;
+  margin: 0 auto;
   background-color: var(--clr-skyblue);
   color: var(--clr-violet);
   padding: 1rem 3rem;

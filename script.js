@@ -66,11 +66,11 @@ buttonEl.addEventListener('click', function (){
         
     }
 })
-resetButton.addEventListener('click' , function() {
+resetButton.addEventListener ('click' , () => {
     guess = 10;
-    guessesLeft.innerText = guesses;
-    inputNum.value = "";
-    output.textContent = "";
+    guessValue.innerText = guess;
+    guessInput.value = "";
+    guessEl.textContent = "";
     ranNum = result();
     console.log(ranNum);
     resetButton.style.display = "none";
